@@ -1,0 +1,45 @@
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile-icon">
+      <img src="https://www.shutterstock.com/image-vector/people-person-icon-modern-flat-260nw-1907883829.jpg" alt="Perfil">
+    </div>
+    <button >Agregar</button>
+  </div>
+
+  <!-- Sección principal -->
+  <div class="main">
+    <h2>Lista de Empleados</h2>
+    <body>
+      <div class="cajabuscar"><form method="get" id="buscarform">
+      <fieldset>
+          <input type="text" id="s" value="" placeholder="Buscar"  />
+          <input class="button" type="submit" value="BUSCAR" />
+          <i class="search"></i>
+      </fieldset>
+      </form></div>
+   </body>
+    <table>
+      <thead>
+        <tr>
+          <th>Perfil</th>
+          <th>Nombre</th>
+          <th>Cargo</th>
+          <th>Especialidad</th>
+          <th>Horario <small>(H/D)</small></th>
+          <th>Desempeño</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td><img [src]="employee.profile" alt="Perfil de empleado"></td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.position }}</td>
+          <td>{{ employee.specialty }}</td>
+          <td>{{ employee.schedule }}</td>
+          <td>{{ employee.performance }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
